@@ -56,7 +56,7 @@ function ChipsInput() {
         margin: "40px 0",
       }}
     >
-      <h2>Chips Input</h2>
+      <h2 className="text-2xl">Chips Input</h2>
       <input
         type="text"
         value={chipInputValue}

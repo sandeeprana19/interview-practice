@@ -47,7 +47,7 @@ const ProgressBar = () => {
         margin: "0 auto",
       }}
     >
-      <h2 style={{ margin: "0" }}>ProgressBar</h2>
+      <h2 className="text-2xl m-0">ProgressBar</h2>
       <div
         style={{
           width: "100%",

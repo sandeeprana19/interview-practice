@@ -1,56 +1,101 @@
+@import "tailwindcss";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  -webkit-font-smoothing: auto;
-  -moz-font-smoothing: auto;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: auto;
-  text-rendering: optimizeLegibility;
-  font-smooth: always;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
   margin: 0;
   padding-top: 90px;
 }
 
-h1 {
-  font-size: 1.5rem;
+/* Dark Mode CSS below */
+/* Light Mode */
+.light-mode {
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-.c-header {
-  padding: 15px 30px;
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  position: fixed;
+  align-items: center;
+}
+
+.u-text--32 {
+  font-size: 32px;
+}
+
+.u-mb--30 {
+  margin-bottom: 30px;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.mode-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Toggle switch styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 10;
-  background: white;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
 }
 
-.c-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
 }
 
-.c-nav-link {
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
+input:checked + .slider {
+  background-color: #4caf50;
 }
 
-.c-nav-link:hover {
-  color: navy;
+input:checked + .slider:before {
+  transform: translateX(26px);
 }

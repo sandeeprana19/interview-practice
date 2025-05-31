@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const ChipInput = lazy(() => import("./components/ChipInput.jsx"));
 const ProgressBar = lazy(() => import("./components/ProgressBar.jsx"));
+const DarkModeToggle = lazy(() => import("./components/DarkModeToggle.jsx"));
 
 const appRouter = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
             <ChipInput />
           </Suspense>
         ),
@@ -23,8 +24,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/progress-bar",
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
             <ProgressBar />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/dark-mode-toggle",
+        element: (
+          <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
+            <DarkModeToggle />
           </Suspense>
         ),
       },
