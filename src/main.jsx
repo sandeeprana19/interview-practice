@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const ChipInput = lazy(() => import("./components/ChipInput.jsx"));
 const ProgressBar = lazy(() => import("./components/ProgressBar.jsx"));
 const DarkModeToggle = lazy(() => import("./components/DarkModeToggle.jsx"));
+const TogglePassword = lazy(() => import("./components/TogglePassword.jsx"));
+const Sidebar = lazy(() => import("./components/Sidebar.jsx"));
+const Modal = lazy(() => import("./components/Modal.jsx"));
 
 const appRouter = createBrowserRouter([
   {
@@ -34,6 +37,30 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
             <DarkModeToggle />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/toggle-password",
+        element: (
+          <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
+            <TogglePassword />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/sidebar",
+        element: (
+          <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
+            <Sidebar />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/modal",
+        element: (
+          <Suspense fallback={<h1 className="text-2xl">Loading</h1>}>
+            <Modal />
           </Suspense>
         ),
       },

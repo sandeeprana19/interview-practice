@@ -1,36 +1,81 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AlignLeft } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="bg-white py-[0.9375rem] px-[1.875rem] flex items-center justify-center shadow-[0_0_10px_rgba(0,0,0,0.5)] fixed top-0 left-0 w-full h-[5rem] z-50">
-      <ul className="flex items-center gap-[0.9375rem] list-none m-0 p-0">
-        <li>
-          <Link
-            to="/"
-            className="text-black decoration-0 text-base font-semibold"
-          >
-            ChipsInput
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/progress-bar"
-            className="text-black decoration-0 text-base font-semibold"
-          >
-            ProgressBar
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/dark-mode-toggle"
-            className="text-black decoration-0 text-base font-semibold"
-          >
-            DarkModeToggle
-          </Link>
-        </li>
-      </ul>
-    </header>
+    <>
+      <div className="navbar bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle"
+            >
+              <AlignLeft />
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <Link
+                  to="/"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  ChipsInput
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/progress-bar"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  ProgressBar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/dark-mode-toggle"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  DarkModeToggle
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/toggle-password"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  TogglePassword
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/sidebar"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  Sidebar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/modal"
+                  className="text-black decoration-0 text-base font-semibold"
+                >
+                  Modal
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="navbar-center">
+          <a className="btn btn-ghost text-xl">Interview Practice</a>
+        </div>
+        <div className="navbar-end"></div>
+      </div>
+    </>
   );
 };
 
