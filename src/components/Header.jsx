@@ -71,7 +71,9 @@ const Header = () => {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-xl">Interview Practice</a>
+          <Link to="/" className="btn btn-ghost text-xl">
+            Interview Practice
+          </Link>
         </div>
         <div className="navbar-end"></div>
       </div>
