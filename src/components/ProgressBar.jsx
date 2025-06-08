@@ -1,11 +1,12 @@
 import { useState } from "react";
 
+// Problem:
 // Progress Bar related question:
-// ==================================================================================
+
 // Create a Progress Bar Component in React that visually represents a single
 // progress value. Users should be able to increment or decrement progress
 // buttons. Make sure to use inline css.
-// ==================================================================================
+
 // Requirements:
 // 1. Display one progress bar.
 // 2. The bar should reflect a numeric progress (0—100%).
@@ -17,7 +18,7 @@ import { useState } from "react";
 // » Red if less than 40%
 // » Orange if between 40-79%
 // » Green if 80% or more
-// ==================================================================================
+
 // Constraints & Edge Cases:
 // » Constraint 1: Progress must stay between 0 and 100.
 // » Constraint 2: The background color-changing div must have an

@@ -44,28 +44,45 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/toggle-password"
-                  className="text-black decoration-0 text-base font-semibold"
-                >
-                  TogglePassword
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/sidebar"
-                  className="text-black decoration-0 text-base font-semibold"
-                >
-                  Sidebar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/modal"
-                  className="text-black decoration-0 text-base font-semibold"
-                >
-                  Modal
-                </Link>
+                <details>
+                  <summary className="text-black decoration-0 text-base font-semibold">
+                    TCS
+                  </summary>
+                  <ul>
+                    <li>
+                      <Link
+                        to="/tcs/toggle-password"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        TogglePassword
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tcs/sidebar"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        Sidebar
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tcs/modal"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        Modal
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tcs/calculator"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        Calculator
+                      </Link>
+                    </li>
+                  </ul>
+                </details>
               </li>
             </ul>
           </div>

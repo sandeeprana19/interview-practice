@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
+// Problem:
 // Chips Input related question:
-// ==================================================================================
+
 // In this task, you are asked to create a Chips Input component that allows users to
 // input a series of tags or keywords. The component will display these tags as "chips"
 // (small labels), which users can add and remove dynamically.
-// ==================================================================================
+
 // Features:
 // 1. Input Field: Users can type text into an input field.
 // 2. Add Chips: When the user presses the "Enter" key, the typed text will be
@@ -14,7 +15,7 @@ import React, { useState } from "react";
 // 4. Horizontal Display: The chips should be displayed in a horizontal list.
 // 5. Persistence: The list of chips should be maintained even when the
 // component re-renders.
-// ==================================================================================
+
 // Important Points:
 // 1. The input field should be of type text.
 // 2. Button should be labeled "X" to delete chips

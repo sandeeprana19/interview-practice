@@ -10,6 +10,7 @@ const DarkModeToggle = lazy(() => import("./components/DarkModeToggle.jsx"));
 const TogglePassword = lazy(() => import("./components/TogglePassword.jsx"));
 const Sidebar = lazy(() => import("./components/Sidebar.jsx"));
 const Modal = lazy(() => import("./components/Modal.jsx"));
+const Calculator = lazy(() => import("./components/Calculator.jsx"));
 
 const appRouter = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/toggle-password",
+        path: "/tcs/toggle-password",
         element: (
           <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
             <TogglePassword />
@@ -49,7 +50,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/sidebar",
+        path: "/tcs/sidebar",
         element: (
           <Suspense fallback={<h1 className="text-2xl">Loading...</h1>}>
             <Sidebar />
@@ -57,10 +58,18 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/modal",
+        path: "/tcs/modal",
         element: (
           <Suspense fallback={<h1 className="text-2xl">Loading</h1>}>
             <Modal />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/tcs/calculator",
+        element: (
+          <Suspense fallback={<h1 className="text-2xl">Loading</h1>}>
+            <Calculator />
           </Suspense>
         ),
       },
