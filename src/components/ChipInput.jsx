@@ -20,7 +20,7 @@ import React, { useState } from "react";
 // 1. The input field should be of type text.
 // 2. Button should be labeled "X" to delete chips
 // 3. If two chips have the same name, deleting one should NOT delete both.
-// 4. Make sure to use onKeyDown event handler instead of onKeyPress because
+// 4. Make sure to use onKeyDown event handler instead of onKeyPress because onKeyPress is deprecated
 
 function ChipsInput() {
   const [chipInputValue, setChipInputValue] = useState("");
