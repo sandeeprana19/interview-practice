@@ -49,61 +49,34 @@ function ChipsInput() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        margin: "40px 0",
-      }}
-    >
-      <h2 className="text-2xl">Chips Input</h2>
+    <div className="flex flex-col items-center gap-y-5 pt-5">
+      <h2 className="text-2xl font-medium">Chips Input</h2>
       <input
         type="text"
         value={chipInputValue}
         onChange={handleChipInputValue}
         onKeyDown={handleAddChip}
         placeholder="Type a chip and press tag"
-        style={{ padding: "8px", width: "200px" }}
+        className="p-2 w-[200px] border border-[#cccccc] outline-none rounded-lg"
       />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "10px",
-          marginTop: "20px",
-        }}
-      >
-        {chips.map((chip) => (
-          <div
-            key={chip.id}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "5px",
-              fontSize: "14px",
-              background: "#d3d3d3",
-              padding: "5px 10px",
-              borderRadius: "30px",
-            }}
-          >
-            <span>{chip.label}</span>
-            <button
-              onClick={() => handleDeleteChip(chip.id)}
-              style={{
-                color: "red",
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-              }}
+      {chips.length !== 0 && (
+        <div className="flex items-center justify-center gap-[10px]">
+          {chips.map((chip) => (
+            <div
+              className="flex items-center justify-center gap-[5px] text-[16px] font-medium bg-[#d3d3d3] py-[5px] px-[10px] rounded-[30px]"
+              key={chip.id}
             >
-              X
-            </button>
-          </div>
-        ))}
-      </div>
+              <span>{chip.label}</span>
+              <button
+                onClick={() => handleDeleteChip(chip.id)}
+                className="bg-transparent text-red-700 border-0 cursor-pointer"
+              >
+                X
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

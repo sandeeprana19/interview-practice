@@ -141,65 +141,91 @@ function Calculator() {
         <input className="display" placeholder="Enter expression" readOnly />
 
         <div className="button-grid">
-          <button className="clear-btn">
+          <button className="clear-btn c-button">
             <span className="icon-clear">
               <Trash />
             </span>
           </button>
-          <button>
+          <button className="c-button">
             <span className="icon-sqrt">
               <Radical />
             </span>
           </button>
-          <button>
+          <button className="c-button">
             <span className="icon-percent">
               <Percent />
             </span>
           </button>
-          <button>
+          <button className="c-button">
             <span className="icon-divide">
               <Divide />
             </span>
           </button>
 
-          <button onClick={() => handleButtonClick("7")}>7</button>
-          <button onClick={() => handleButtonClick("8")}>8</button>
-          <button onClick={() => handleButtonClick("9")}>9</button>
-          <button>
+          <button className="c-button" onClick={() => handleButtonClick("7")}>
+            7
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("8")}>
+            8
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("9")}>
+            9
+          </button>
+          <button className="c-button">
             <span className="icon-multiply">
               <X />
             </span>
           </button>
 
-          <button onClick={() => handleButtonClick("4")}>4</button>
-          <button onClick={() => handleButtonClick("5")}>5</button>
-          <button onClick={() => handleButtonClick("6")}>6</button>
-          <button>
+          <button className="c-button" onClick={() => handleButtonClick("4")}>
+            4
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("5")}>
+            5
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("6")}>
+            6
+          </button>
+          <button className="c-button">
             <span className="icon-minus">
               <Minus />
             </span>
           </button>
 
-          <button onClick={() => handleButtonClick("1")}>1</button>
-          <button onClick={() => handleButtonClick("2")}>2</button>
-          <button onClick={() => handleButtonClick("3")}>3</button>
-          <button>
+          <button className="c-button" onClick={() => handleButtonClick("1")}>
+            1
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("2")}>
+            2
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("3")}>
+            3
+          </button>
+          <button className="c-button">
             <span className="icon-plus">
               <Plus />
             </span>
           </button>
 
-          <button onClick={() => handleButtonClick("0")}>0</button>
-          <button onClick={() => handleButtonClick(".")}>.</button>
-          <button onClick={() => handleButtonClick("(")}>(</button>
-          <button onClick={() => handleButtonClick(")")}>)</button>
+          <button className="c-button" onClick={() => handleButtonClick("0")}>
+            0
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick(".")}>
+            .
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick("(")}>
+            (
+          </button>
+          <button className="c-button" onClick={() => handleButtonClick(")")}>
+            )
+          </button>
 
-          <button className="back-btn">
+          <button className="c-button back-btn">
             <span className="icon-backspace">
               <Delete />
             </span>
           </button>
-          <button className="equal-btn">
+          <button className="c-button equal-btn">
             <span className="icon-equal">
               <Equal />
             </span>

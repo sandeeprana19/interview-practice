@@ -22,14 +22,22 @@ function DarkModeToggle() {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   return (
-    <div className={`container ${darkMode ? "dark-mode" : "light-mode"}`}>
-      <h1 className="u-text--32 u-mb--30">Dark Mode Toggle</h1>
-      <div className="toggle-container">
-        <label className="switch">
-          <input type="checkbox" onChange={toggleTheme} />
-          <span className="slider round"></span>
+    <div
+      className={`text-center h-[calc(100vh-64px)] w-full max-w-full flex flex-col justify-center items-center gap-y-5 ${
+        darkMode ? "bg-[#121212] text-white" : "bg-[#f0f0f0] text-[#333333]"
+      }`}
+    >
+      <h1 className="text-2xl font-medium">Dark Mode Toggle</h1>
+      <div className="flex items-center justify-center gap-5">
+        <label className="relative inline-block w-[60px] h-[34px]">
+          <input
+            type="checkbox"
+            onChange={toggleTheme}
+            className="opacity-0 w-0 h-0 peer"
+          />
+          <span className="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-[#cccccc] transition-all rounded-[50px] before:absolute before:content-[''] before:h-[26px] before:w-[26px] before:rounded-[50px] before:left-[4px] before:bottom-[4px] before:bg-white before:transition-all peer-checked:bg-[#4caf50] peer-checked:before:translate-x-[26px]"></span>
         </label>
-        <span className="mode-text">
+        <span className="text-lg font-bold text-inherit">
           {darkMode ? "Dark Mode" : "Light Mode"}
         </span>
       </div>

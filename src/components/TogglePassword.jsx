@@ -43,25 +43,30 @@ function TogglePassword() {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Toggle Password</h1>
-      <div className="password-wrapper">
+    <div className="text-center w-full max-w-full flex flex-col justify-center items-center pt-10">
+      <h1 className="text-2xl font-medium text-[#22b691] mb-5">
+        Toggle Password
+      </h1>
+      <div className="relative w-[290px]">
         <input
           type={isPasswordVisible ? "text" : "password"}
           id="password"
           placeholder="Enter password"
-          className="password-input"
+          className="p-[10px_35px_10px_10px] w-full text-base border border-[#cccccc] rounded-[6px] outline-none shadow-[0_2px_5px_rgba(0, 0, 0, 0.05)] bg-white"
           data-testid="password-input"
         />
         <span
-          className="icon"
+          className="absolute right-[5px] top-1/2 z-10 -translate-1/2 cursor-pointer text-[#888888] hover:text-black"
           data-testid="toggle-icon"
           onClick={handlePasswordVisibility}
         >
           {isPasswordVisible ? <Eye size={18} /> : <EyeOff size={18} />}
         </span>
       </div>
-      <span className="visibility-label" data-testid="visibility-label">
+      <span
+        className="block mt-[6px] text-[13px] text-[#888] text-left w-[280px]"
+        data-testid="visibility-label"
+      >
         {isPasswordVisible ? "Password Visible" : "Password Hidden"}
       </span>
     </div>

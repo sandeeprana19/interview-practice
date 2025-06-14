@@ -33,62 +33,40 @@ const ProgressBar = () => {
     setProgress((prev) => Math.max(0, Math.min(100, prev + delta)));
 
   const getProgressBgColor = () => {
-    if (progress >= 80) return "green";
-    if (progress >= 40) return "orange";
-    return "red";
+    if (progress >= 80) return "bg-green-600";
+    if (progress >= 40) return "bg-blue-600";
+    return "bg-red-600";
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "400px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        margin: "0 auto",
-      }}
-    >
+    <div className="flex flex-col gap-5 my-0 mx-auto max-w-[400px]">
       <h2 className="text-2xl m-0">ProgressBar</h2>
-      <div
-        style={{
-          width: "100%",
-          height: "25px",
-          background: "#d3d3d3",
-          borderRadius: "10px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <div className="w-full h-[25px] bg-[#d3d3d3] rounded-[10px] relative overflow-hidden">
         <div
-          style={{
-            width: `${progress}%`,
-            height: "100%",
-            background: getProgressBgColor(),
-          }}
+          style={{ width: `${progress}%` }}
+          className={`h-full ${getProgressBgColor()}`}
           id="testBgColor"
         ></div>
         <span
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%,-50%)",
-            color: `${progress >= 80 ? "white" : "black"}`,
-            fontWeight: 600,
-          }}
+          className={`absolute top-1/2 left-1/2 translate-1/2 text-[${
+            progress >= 80 ? "white" : "black"
+          }] font-bold`}
         >
           {progress}%
         </span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <div
+        className="flex items-center gap-[10px]"
+        style={{ display: "flex", alignItems: "center", gap: "10px" }}
+      >
         <button
-          style={{ cursor: "pointer" }}
+          className="cursor-pointer bg-gray-200 py-2 px-3 rounded-lg"
           onClick={() => updateProgressValue(-10)}
         >
           -10%
         </button>
         <button
-          style={{ cursor: "pointer" }}
+          className="cursor-pointer bg-gray-200 py-2 px-3 rounded-lg"
           onClick={() => updateProgressValue(+10)}
         >
           +10%
