@@ -111,11 +111,8 @@ import {
 function Calculator() {
   const [expression, setExpression] = useState("");
 
-  // console.log(expression);
-
   const handleButtonClick = (value) => {
     setExpression((prev) => {
-      // console.log(prev);
       return prev + value;
     });
   };
