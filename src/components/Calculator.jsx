@@ -58,10 +58,10 @@ import {
 // On "=" click → Display: "56"
 
 // Example 2: Clear
-// Display: "56" → Click Clear (Trash icon)
+// Display: "56" → Click Clear (Trash icon) → ""
 
 // Example 3: Backspace
-// Display: "5+" → Click Delete icon →
+// Display: "5+" → Click Delete icon → "5"
 
 // Example 4: Invalid
 // Display: "+" "=" → Error
@@ -136,7 +136,10 @@ function Calculator() {
   };
 
   return (
-    <div className="m-0 font-poppins bg-linear-[135deg,#f4f4f4,#dfe6e9] flex items-center justify-center h-[calc(100vh-64px)] pt-10">
+    <div
+      className="m-0 font-poppins bg-linear-[135deg,#f4f4f4,#dfe6e9] flex items-center justify-center h-[calc(100vh-64px)] pt-10"
+      data-testid="calc-container"
+    >
       <div className="bg-white py-[30px] px-5 rounded-[20px] shadow-[0px_12px_24px_rgba(0, 0, 0, 0.15)] w-[320px] text-center">
         <h1 className="text-[25px] mb-5 mt-2 text-[#22b691]">
           Simple Calculator
@@ -146,144 +149,177 @@ function Calculator() {
           value={expression}
           className="w-full h-16 text-xl p-[10px] rounded-[10px] border-2 border-black text-right mb-[25px] bg-[#e6efe7] text-[#2f3542] placeholder:text-[3b2bec3]"
           placeholder="Enter expression"
+          data-testid="calc-display"
           readOnly
         />
 
         <div className="grid grid-cols-[repeat(4,_1fr)] gap-[12px]">
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#2d3436] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#000000] hover:scale-[1.05]"
+            data-testid="btn-clear"
             onClick={handleClear}
           >
             <span className="icon-clear">
-              <Trash className="w-5 h-5 align-middle stroke-[#ffffff]" />
+              <Trash
+                className="w-5 h-5 align-middle stroke-[#ffffff]"
+                data-testid="icon-clear"
+              />
             </span>
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-sqrt"
             onClick={() => handleButtonClick("√(")}
           >
             <span className="icon-sqrt">
-              <Radical className="w-5 h-5 align-middle stroke-[#2d3436]" />
+              <Radical
+                className="w-5 h-5 align-middle stroke-[#2d3436]"
+                data-testid="icon-sqrt"
+              />
             </span>
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-modulus"
             onClick={() => handleButtonClick("%")}
           >
             <span className="icon-percent">
-              <Percent className="w-5 h-5 align-middle stroke-[#2d3436]" />
+              <Percent
+                className="w-5 h-5 align-middle stroke-[#2d3436]"
+                data-testid="icon-percent"
+              />
             </span>
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-divide"
             onClick={() => handleButtonClick("/")}
           >
             <span className="icon-divide">
-              <Divide className="w-5 h-5 align-middle stroke-[#2d3436]" />
+              <Divide
+                className="w-5 h-5 align-middle stroke-[#2d3436]"
+                data-testid="icon-divide"
+              />
             </span>
           </button>
 
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-7"
             onClick={() => handleButtonClick("7")}
           >
             7
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-8"
             onClick={() => handleButtonClick("8")}
           >
             8
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-9"
             onClick={() => handleButtonClick("9")}
           >
             9
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-multiply"
             onClick={() => handleButtonClick("*")}
           >
             <span className="icon-multiply">
-              <X />
+              <X data-testid="icon-multiply" />
             </span>
           </button>
 
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-4"
             onClick={() => handleButtonClick("4")}
           >
             4
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-5"
             onClick={() => handleButtonClick("5")}
           >
             5
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-6"
             onClick={() => handleButtonClick("6")}
           >
             6
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-minus"
             onClick={() => handleButtonClick("-")}
           >
             <span className="icon-minus">
-              <Minus />
+              <Minus data-testid="icon-minus" />
             </span>
           </button>
 
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-1"
             onClick={() => handleButtonClick("1")}
           >
             1
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-2"
             onClick={() => handleButtonClick("2")}
           >
             2
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-3"
             onClick={() => handleButtonClick("3")}
           >
             3
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-plus"
             onClick={() => handleButtonClick("+")}
           >
             <span className="icon-plus">
-              <Plus />
+              <Plus data-testid="icon-plus" />
             </span>
           </button>
 
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-0"
             onClick={() => handleButtonClick("0")}
           >
             0
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-dot"
             onClick={() => handleButtonClick(".")}
           >
             .
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-open"
             onClick={() => handleButtonClick("(")}
           >
             (
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#d2f6ec] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#a6dfc1] hover:scale-[1.05]"
+            data-testid="btn-close"
             onClick={() => handleButtonClick(")")}
           >
             )
@@ -291,18 +327,26 @@ function Calculator() {
 
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#fd5a5a] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#ff2b2b] hover:scale-[1.05] back-btn"
+            data-testid="btn-back"
             onClick={handleBackspace}
           >
             <span className="icon-backspace">
-              <Delete className="w-5 h-5 align-middle stroke-[#ffffff]" />
+              <Delete
+                className="w-5 h-5 align-middle stroke-[#ffffff]"
+                data-testid="icon-backspace"
+              />
             </span>
           </button>
           <button
             className="py-[15px] px-0 text-lg border-0 rounded-[10px] bg-[#00b894] text-[#2d3436] cursor-pointer transition-all flex items-center justify-center hover:bg-[#019875] hover:scale-[1.05] col-span-3"
+            data-testid="btn-equal"
             onClick={handleEvaluate}
           >
             <span className="icon-equal">
-              <Equal className="w-5 h-5 align-middle stroke-[#ffffff]" />
+              <Equal
+                className="w-5 h-5 align-middle stroke-[#ffffff]"
+                data-testid="icon-equals"
+              />
             </span>
           </button>
         </div>
@@ -312,3 +356,248 @@ function Calculator() {
 }
 
 export default Calculator;
+
+// For submission:
+// function Calculator() {
+//   const [expression, setExpression] = useState("");
+
+//   const handleButtonClick = (value) => {
+//     setExpression((prev) => {
+//       return prev + value;
+//     });
+//   };
+
+//   const handleClear = () => {
+//     setExpression("");
+//   };
+
+//   const handleBackspace = () => {
+//     setExpression((prev) => prev.slice(0, -1));
+//   };
+
+//   const handleEvaluate = () => {
+//     try {
+//       const modifiedInput = expression.replace(/√/g, "Math.sqrt");
+//       const result = eval(modifiedInput);
+//       setExpression(result.toString());
+//     } catch {
+//       setExpression("Error");
+//     }
+//   };
+
+//   return (
+//     <div className="c-calculator" data-testid="calc-container">
+//       <div className="c-calculator-container">
+//         <h1 className="c-calculator-title">Simple Calculator</h1>
+//         <input
+//           type="text"
+//           value={expression}
+//           className="c-calculator-display"
+//           placeholder="Enter expression"
+//           data-testid="calc-display"
+//           readOnly
+//         />
+
+//         <div className="c-calculator-button-grid">
+//           <button
+//             className="c-calculator-button c-calculator-clear-btn"
+//             data-testid="btn-clear"
+//             onClick={handleClear}
+//           >
+//             <span className="icon-clear">
+//               <Trash
+//                 className="w-5 h-5 align-middle stroke-[#ffffff]"
+//                 data-testid="icon-clear"
+//               />
+//             </span>
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-sqrt"
+//             onClick={() => handleButtonClick("√(")}
+//           >
+//             <span className="icon-sqrt">
+//               <Radical
+//                 className="w-5 h-5 align-middle stroke-[#2d3436]"
+//                 data-testid="icon-sqrt"
+//               />
+//             </span>
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-modulus"
+//             onClick={() => handleButtonClick("%")}
+//           >
+//             <span className="icon-percent">
+//               <Percent
+//                 className="w-5 h-5 align-middle stroke-[#2d3436]"
+//                 data-testid="icon-percent"
+//               />
+//             </span>
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-divide"
+//             onClick={() => handleButtonClick("/")}
+//           >
+//             <span className="icon-divide">
+//               <Divide
+//                 className="w-5 h-5 align-middle stroke-[#2d3436]"
+//                 data-testid="icon-divide"
+//               />
+//             </span>
+//           </button>
+
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-7"
+//             onClick={() => handleButtonClick("7")}
+//           >
+//             7
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-8"
+//             onClick={() => handleButtonClick("8")}
+//           >
+//             8
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-9"
+//             onClick={() => handleButtonClick("9")}
+//           >
+//             9
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-multiply"
+//             onClick={() => handleButtonClick("*")}
+//           >
+//             <span className="icon-multiply">
+//               <X data-testid="icon-multiply" />
+//             </span>
+//           </button>
+
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-4"
+//             onClick={() => handleButtonClick("4")}
+//           >
+//             4
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-5"
+//             onClick={() => handleButtonClick("5")}
+//           >
+//             5
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-6"
+//             onClick={() => handleButtonClick("6")}
+//           >
+//             6
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-minus"
+//             onClick={() => handleButtonClick("-")}
+//           >
+//             <span className="icon-minus">
+//               <Minus data-testid="icon-minus" />
+//             </span>
+//           </button>
+
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-1"
+//             onClick={() => handleButtonClick("1")}
+//           >
+//             1
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-2"
+//             onClick={() => handleButtonClick("2")}
+//           >
+//             2
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-3"
+//             onClick={() => handleButtonClick("3")}
+//           >
+//             3
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-plus"
+//             onClick={() => handleButtonClick("+")}
+//           >
+//             <span className="icon-plus">
+//               <Plus data-testid="icon-plus" />
+//             </span>
+//           </button>
+
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-0"
+//             onClick={() => handleButtonClick("0")}
+//           >
+//             0
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-dot"
+//             onClick={() => handleButtonClick(".")}
+//           >
+//             .
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-open"
+//             onClick={() => handleButtonClick("(")}
+//           >
+//             (
+//           </button>
+//           <button
+//             className="c-calculator-button"
+//             data-testid="btn-close"
+//             onClick={() => handleButtonClick(")")}
+//           >
+//             )
+//           </button>
+
+//           <button
+//             className="c-calculator-button c-calculator-back-btn"
+//             data-testid="btn-back"
+//             onClick={handleBackspace}
+//           >
+//             <span className="icon-backspace">
+//               <Delete
+//                 className="w-5 h-5 align-middle stroke-[#ffffff]"
+//                 data-testid="icon-backspace"
+//               />
+//             </span>
+//           </button>
+//           <button
+//             className="c-calculator-button c-calculator-equal-btn"
+//             data-testid="btn-equal"
+//             onClick={handleEvaluate}
+//           >
+//             <span className="icon-equal">
+//               <Equal
+//                 className="w-5 h-5 align-middle stroke-[#ffffff]"
+//                 data-testid="icon-equal"
+//               />
+//             </span>
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Calculator;
