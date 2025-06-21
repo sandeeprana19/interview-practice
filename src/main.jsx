@@ -11,6 +11,7 @@ const TogglePassword = lazy(() => import("./components/TogglePassword.jsx"));
 const Sidebar = lazy(() => import("./components/Sidebar.jsx"));
 const Modal = lazy(() => import("./components/Modal.jsx"));
 const Calculator = lazy(() => import("./components/Calculator.jsx"));
+const Error = lazy(() => import("./components/Error.jsx"));
 
 const appRouter = createBrowserRouter([
   {
@@ -74,6 +75,7 @@ const appRouter = createBrowserRouter([
         ),
       },
     ],
+    errorElement: <Error />,
   },
 ]);
 
