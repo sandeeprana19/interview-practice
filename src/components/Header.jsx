@@ -51,18 +51,18 @@ const Header = () => {
                   <ul>
                     <li>
                       <Link
-                        to="/tcs/toggle-password"
-                        className="text-black decoration-0 text-base font-semibold"
-                      >
-                        TogglePassword
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         to="/tcs/sidebar"
                         className="text-black decoration-0 text-base font-semibold"
                       >
                         Sidebar
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/tcs/toggle-password"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        TogglePassword
                       </Link>
                     </li>
                     <li>
@@ -79,6 +79,23 @@ const Header = () => {
                         className="text-black decoration-0 text-base font-semibold"
                       >
                         Calculator
+                      </Link>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary className="text-black decoration-0 text-base font-semibold">
+                    Infosys
+                  </summary>
+                  <ul>
+                    <li>
+                      <Link
+                        to="/infosys/focus-input"
+                        className="text-black decoration-0 text-base font-semibold"
+                      >
+                        FocusInput
                       </Link>
                     </li>
                   </ul>
