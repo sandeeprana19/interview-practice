@@ -34,7 +34,7 @@ const ProgressBar = () => {
 
   const getProgressBgColor = () => {
     if (progress >= 80) return "bg-green-600";
-    if (progress >= 40) return "bg-blue-600";
+    if (progress >= 40) return "bg-orange-600";
     return "bg-red-600";
   };
 
@@ -48,9 +48,9 @@ const ProgressBar = () => {
           id="testBgColor"
         ></div>
         <span
-          className={`absolute top-1/2 left-1/2 translate-1/2 text-[${
-            progress >= 80 ? "white" : "black"
-          }] font-bold`}
+          className={`absolute top-1/2 left-1/2 -translate-1/2 text-${
+            progress >= 60 ? "white" : "black"
+          } font-bold`}
         >
           {progress}%
         </span>
